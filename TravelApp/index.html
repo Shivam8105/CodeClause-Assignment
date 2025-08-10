@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Travel Explorer</title>
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <link rel="stylesheet" href="style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+  <nav>
+    <div class="logo">Travel Explorer</div>
+    <ul>
+      <li><a href="#destinations">Destinations</a></li>
+      <li><a href="#tours">Tours</a></li>
+      <li><a href="#book">Book</a></li>
+    </ul>
+  </nav>
+  <header>
+    <h1>Your Adventure Begins Here</h1>
+    <p>Discover, plan and book your next journey with ease!</p>
+  </header>
+
+  <section id="destinations">
+    <h2>Popular Destinations</h2>
+    <div class="grid">
+      <div class="card">
+        <img src="https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=400&q=80" alt="Mountains">
+        <h3>Swiss Alps</h3>
+        <p>Breathtaking mountain escapes with stunning views and alpine villages.</p>
+      </div>
+      <div class="card">
+        <img src="https://images.unsplash.com/photo-1519125323398-675f0ddb6308?auto=format&fit=crop&w=400&q=80" alt="Beach">
+        <h3>Bali</h3>
+        <p>Relax on sandy beaches, enjoy vibrant culture and lush greenery.</p>
+      </div>
+      <div class="card">
+        <img src="https://images.unsplash.com/photo-1454023492550-5696f8ff10e1?auto=format&fit=crop&w=400&q=80" alt="City">
+        <h3>Paris</h3>
+        <p>Experience the romance and charm of the city of lights.</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="tours">
+    <h2>Tours & Activities</h2>
+    <div class="tour-list" id="tourList">
+      <!-- Dynamic tours populated by JS -->
+    </div>
+  </section>
+
+  <section id="book">
+    <h2>Book a Tour</h2>
+    <form id="bookingForm" autocomplete="off">
+      <label>
+        Name:
+        <input type="text" id="name" required>
+      </label>
+      <label>
+        Email:
+        <input type="email" id="email" required>
+      </label>
+      <label>
+        Select Tour:
+        <select id="selectTour" required>
+          <!-- Populated by JS -->
+        </select>
+      </label>
+      <label>
+        Number of Travelers:
+        <input type="number" id="travelers" min="1" max="10" value="1" required>
+      </label>
+      <button type="submit">Book Now</button>
+    </form>
+    <div id="bookingSuccess" class="success-msg"></div>
+  </section>
+
+  <footer>
+    <p>© 2025 Travel Explorer. Designed with 💙 for adventurers.</p>
+  </footer>
+  <script src="script.js"></script>
+</body>
+</html>
