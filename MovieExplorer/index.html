@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Movie Explorer</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link rel="stylesheet" href="style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&family=Montserrat:wght@600;900&display=swap" rel="stylesheet" />
+</head>
+<body>
+  <header>
+    <div class="overlay"></div>
+    <h1>🎬 Movie Explorer</h1>
+    <p>Search your favorite movies — modern, sleek, and professional</p>
+    <div class="search-container">
+      <input type="text" id="searchInput" placeholder="Enter movie title..." autocomplete="off" />
+      <button id="searchButton">Search</button>
+    </div>
+  </header>
+
+  <main id="moviesGrid">
+    <!-- Movie cards will be dynamically inserted here -->
+  </main>
+
+  <footer>
+    <p>© 2025 Movie Explorer — Designed to impress 🎉</p>
+  </footer>
+  <div id="movieModal" class="modal">
+  <div class="modal-content">
+    <span id="closeModal" class="close">&times;</span>
+    <div id="movieDetails">
+      <!-- Detailed movie info will be injected here -->
+    </div>
+  </div>
+</div>
+
+  <script src="script.js"></script>
+</body>
+</html>

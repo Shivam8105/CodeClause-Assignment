@@ -1,0 +1,232 @@
+:root {
+  --primary: #ff4757;
+  --primary-dark: #e84118;
+  --bg-gradient: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
+}
+
+body {
+  font-family: 'Inter', sans-serif;
+  margin: 0;
+  background: var(--bg-gradient);
+  color: #f3f4f6;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+/* Header */
+header {
+  position: relative;
+  padding: 50px 20px 40px;
+  text-align: center;
+  background: url('https://images.unsplash.com/photo-1601979031896-3cc8fe82107a?auto=format&fit=crop&w=1400&q=80') center/cover no-repeat;
+}
+
+header .overlay {
+  position: absolute;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background: rgba(15, 15, 15, 0.7);
+}
+
+header h1 {
+  position: relative;
+  font-size: 2.8rem;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 900;
+  margin: 0;
+  color: var(--primary);
+}
+
+header p {
+  position: relative;
+  font-size: 1.15rem;
+  margin-top: 8px;
+  color: #dfe6e9;
+}
+
+.search-container {
+  position: relative;
+  z-index: 1;
+  margin-top: 20px;
+  display: inline-flex;
+  gap: 10px;
+  max-width: 500px;
+  width: 90%;
+}
+
+#searchInput {
+  flex-grow: 1;
+  padding: 12px 18px;
+  font-size: 1rem;
+  border-radius: 30px;
+  border: none;
+  outline: none;
+}
+
+#searchButton {
+  background: var(--primary);
+  color: white;
+  border: none;
+  font-weight: 600;
+  padding: 12px 24px;
+  border-radius: 30px;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+#searchButton:hover {
+  background: var(--primary-dark);
+}
+
+/* Movie Grid */
+main#moviesGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(210px, 1fr));
+  gap: 22px;
+  padding: 40px 20px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* Movie Card */
+.movie-card {
+  background: rgba(255, 255, 255, 0.07);
+  backdrop-filter: blur(10px);
+  border-radius: 16px;
+  overflow: hidden;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  cursor: pointer;
+  transform: translateY(0);
+  transition: transform 0.25s, box-shadow 0.3s;
+}
+
+.movie-card:hover {
+  transform: translateY(-8px) scale(1.03);
+  box-shadow: 0 16px 28px rgba(0, 0, 0, 0.6);
+}
+
+.movie-card img {
+  width: 100%;
+  height: 300px;
+  object-fit: cover;
+}
+
+.movie-info {
+  padding: 14px 14px 18px;
+}
+
+.movie-info h3 {
+  margin: 0 0 6px 0;
+  font-weight: 700;
+  font-size: 1.05rem;
+  color: var(--primary);
+}
+
+.movie-info p {
+  margin: 2px 0;
+  font-size: 0.92rem;
+  color: #dcdde1;
+}
+
+/* Messages */
+.loading-msg,
+.error-msg {
+  grid-column: 1 / -1;
+  text-align: center;
+  font-size: 1.1rem;
+  padding: 30px;
+  color: #f1f2f6;
+}
+
+/* Footer */
+footer {
+  background: rgba(0, 0, 0, 0.4);
+  text-align: center;
+  padding: 15px 10px;
+  font-size: 0.9rem;
+}
+
+/* Responsive */
+@media (max-width: 600px) {
+  header h1 {
+    font-size: 2rem;
+  }
+  .movie-card img {
+    height: 240px;
+  }
+}
+
+.modal {
+  display: none; /* Hidden by default */
+  position: fixed;
+  z-index: 100;
+  left: 0;
+  top: 0;
+  width: 100vw;
+  height: 100vh;
+  overflow-y: auto;
+  background-color: rgba(0, 0, 0, 0.75);
+  backdrop-filter: blur(5px);
+  animation: fadeInModal 0.3s ease forwards;
+}
+
+@keyframes fadeInModal {
+  from {opacity: 0;}
+  to {opacity: 1;}
+}
+
+.modal-content {
+  background: rgba(30, 30, 30, 0.95);
+  margin: 60px auto 60px auto;
+  border-radius: 18px;
+  max-width: 700px;
+  padding: 25px 30px;
+  color: #f1f2f6;
+  font-family: 'Inter', sans-serif;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.8);
+  position: relative;
+}
+
+.close {
+  color: #ff4757;
+  font-size: 2.6rem;
+  font-weight: 700;
+  position: absolute;
+  top: 12px;
+  right: 20px;
+  cursor: pointer;
+  transition: color 0.25s ease;
+}
+.close:hover {
+  color: #e84118;
+}
+
+#movieDetails img {
+  float: left;
+  width: 180px;
+  height: 260px;
+  object-fit: cover;
+  border-radius: 12px;
+  margin-right: 28px;
+  box-shadow: 0 4px 15px rgba(33, 33, 33, 0.8);
+}
+
+#movieDetails h2 {
+  margin-top: 0;
+  color: var(--primary);
+  font-family: 'Montserrat', sans-serif;
+}
+
+#movieDetails p {
+  line-height: 1.55;
+  margin: 5px 0;
+  font-size: 1rem;
+  color: #dcdde1;
+  clear: both;
+}
+
+#movieDetails .details-row {
+  margin-top: 10px;
+  font-size: 0.93rem;
+  color: #bbb;
+}
